@@ -1,11 +1,20 @@
 var myButton = document.querySelector(".myButton");
-var name = document.querySelector(".theName");
+var theName = document.querySelector(".theName");
 var greetingMessage = document.querySelector(".greeting");
 
-function greetMe(){
-    var username = name.value;
+function GreetMe(){
+    var username = theName.value;
     var message = "Hi, " + username;
 
-    greetingMessage.innerHTML = message;
+    if(username){
+        greetingMessage.innerHTML = message;
+    }
+
+    Clear();
 }
-myButton.addEventListener('click', greetMe);
+myButton.addEventListener('click', GreetMe);
+
+// clears the text box when button is clicked
+function Clear(){
+    document.querySelector(".theName").value = " ";
+}
