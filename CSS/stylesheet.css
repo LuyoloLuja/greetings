@@ -2,6 +2,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
+    color: #fff;
 }
 .container {
     width: 300px;
@@ -9,7 +10,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: khaki;
+    background-color: #2d545e;
 }
 .form h1 {
     text-align: center;
@@ -17,12 +18,19 @@ body {
  .form {
     margin: 4em;
 }
+input, button {
+    border: none;
+    padding: 4px;
+}
 .textbox {
     margin-bottom: 0.5em;
 }
-.myButton {
+button {
     margin-bottom: 1.5em;
     float: right;
+    background-color: #fff;
+    color: #2d545e;
+    font-weight: bold;
 }
 .greeting {
     clear: both;

@@ -8,6 +8,8 @@ function GreetMe(){
 
     if(username){
         greetingMessage.innerHTML = message;
+    }else {
+        greetingMessage.innerHTML = "Hi enter your name"
     }
 
     ClearTextbox();
