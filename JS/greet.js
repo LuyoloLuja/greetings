@@ -10,11 +10,11 @@ function GreetMe(){
         greetingMessage.innerHTML = message;
     }
 
-    Clear();
+    ClearTextbox();
 }
 myButton.addEventListener('click', GreetMe);
 
 // clears the text box when button is clicked
-function Clear(){
+function ClearTextbox(){
     document.querySelector(".theName").value = " ";
 }
