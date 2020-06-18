@@ -26,9 +26,6 @@ input, button {
 .radio {
     padding: 1em;
 }
-/* .radio label {
-    padding: 5px;
-} */
 button {
     float: right;
     background-color: #fff;

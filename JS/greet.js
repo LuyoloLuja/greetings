@@ -2,6 +2,7 @@ var myButton = document.querySelector(".myButton");
 var theName = document.querySelector(".theName");
 var greetingCounter = document.querySelector(".counter");
 var greetingMessage = document.querySelector(".greeting");
+var count = 1;
 
 function GreetMe(){
     var languages = document.querySelector("input[name='language']:checked");
@@ -17,8 +18,7 @@ function GreetMe(){
             greetingMessage.innerHTML = "Molo, " + username;
         }
     }
-
-    var count = languageChecked.value;
+    languageChecked.value = count;
     greetingCounter.innerHTML = count++;
 
     ClearTextbox();
