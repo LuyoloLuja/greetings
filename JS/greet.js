@@ -1,16 +1,25 @@
 var myButton = document.querySelector(".myButton");
 var theName = document.querySelector(".theName");
+var greetingCounter = document.querySelector(".counter");
 var greetingMessage = document.querySelector(".greeting");
 
 function GreetMe(){
+    var languages = document.querySelector("input[name='language']:checked");
+    var languageChecked = languages.value;
     var username = theName.value;
-    var message = "Hi, " + username;
 
-    if(username){
-        greetingMessage.innerHTML = message;
-    }else {
-        greetingMessage.innerHTML = "Hi enter your name"
+    if(languageChecked){
+        if(languageChecked === "english"){
+            greetingMessage.innerHTML = "Hi, " + username;
+        } else if(languageChecked === "afrikaans"){
+            greetingMessage.innerHTML = "More, " + username;
+        } else if(languageChecked === "isixhosa"){
+            greetingMessage.innerHTML = "Molo, " + username;
+        }
     }
+
+    var count = languageChecked.value;
+    greetingCounter.innerHTML = count++;
 
     ClearTextbox();
 }

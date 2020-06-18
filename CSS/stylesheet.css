@@ -4,9 +4,10 @@ body {
     font-family: sans-serif;
     color: #fff;
 }
-.container {
+.form {
     width: 300px;
     position: absolute;
+    padding: 4em;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -15,22 +16,25 @@ body {
 .form h1 {
     text-align: center;
 }
- .form {
-    margin: 4em;
-}
 input, button {
     border: none;
     padding: 4px;
 }
 .textbox {
-    margin-bottom: 0.5em;
+    margin-bottom: 2em;
 }
+.radio {
+    padding: 1em;
+}
+/* .radio label {
+    padding: 5px;
+} */
 button {
-    margin-bottom: 1.5em;
     float: right;
     background-color: #fff;
     color: #2d545e;
     font-weight: bold;
+    margin: 0.5em;
 }
 .greeting {
     clear: both;
