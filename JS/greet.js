@@ -2,7 +2,7 @@ var myButton = document.querySelector(".myButton");
 var theName = document.querySelector(".theName");
 var greetingCounter = document.querySelector(".counter");
 var greetingMessage = document.querySelector(".greeting");
-var count = 1;
+var count = [];
 
 function GreetMe() {
     var languages = document.querySelector("input[name='language']:checked");
@@ -16,8 +16,12 @@ function GreetMe() {
     } else if (languageChecked === "isixhosa") {
         greetingMessage.innerHTML = "Molo, " + username;
     }
-    languageChecked.value = count;
-    greetingCounter.innerHTML = count++;
+
+    if(theName.value !== " "){
+        languageChecked.value = count++;
+        greetingCounter.innerHTML = count;
+    }
+    localStorage.setItem('timesGreeted', JSON.stringify(count));
 
     ClearTextbox();
 }
