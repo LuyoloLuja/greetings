@@ -3,6 +3,8 @@ var theName = document.querySelector(".theName");
 var greetingCounter = document.querySelector(".counter");
 var greetingMessage = document.querySelector(".greeting");
 var resetButton = document.querySelector(".resetButton");
+
+var namesGreeted = {}
 var count = 0;
 
 function GreetMe() {
@@ -17,9 +19,10 @@ function GreetMe() {
     } else if (languageChecked === "isixhosa") {
         greetingMessage.innerHTML = "Molo, " + username;
     }
-
-    if(theName.value !== " "){
-        languageChecked.value = count++;
+    // counter not working --- should count how many different peoople have been greeted
+    if(theName.value !== " " && namesGreeted[theName] === undefined){
+        count++;
+        namesGreeted[theName] = 0;
         greetingCounter.innerHTML = count;
     }
     localStorage.setItem('timesGreeted', JSON.stringify(count));
