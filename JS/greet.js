@@ -2,6 +2,7 @@ var myButton = document.querySelector(".myButton");
 var theName = document.querySelector(".theName");
 var greetingCounter = document.querySelector(".counter");
 var greetingMessage = document.querySelector(".greeting");
+var resetButton = document.querySelector(".resetButton");
 var count = [];
 
 function GreetMe() {
@@ -31,3 +32,9 @@ myButton.addEventListener('click', GreetMe);
 function ClearTextbox() {
     document.querySelector(".theName").value = " ";
 }
+
+// resetting the counter
+function resetBtn(){
+    greetingCounter.innerHTML = 0;
+}
+resetButton.addEventListener('click', resetBtn);
