@@ -19,7 +19,7 @@ function GreetMe() {
     } else if (languageChecked === "isixhosa") {
         greetingMessage.innerHTML = "Molo, " + username;
     }
-    // counter not working --- should count how many different peoople have been greeted
+    // counter not working --- should increment only when username is not on the list
     if(theName.value !== " " && namesGreeted[theName] === undefined){
         count++;
         namesGreeted[theName] = 0;
