@@ -19,8 +19,8 @@ function GreetMe() {
     } else if (languageChecked === "isixhosa") {
         greetingMessage.innerHTML = "Molo, " + username;
     }
-    // counter not working --- should increment only when username is not on the list
-    if(theName.value !== " " && namesGreeted[theName] === undefined){
+    // counter not working as it should --- should increment only when username is not on the list
+    if (theName.value !== " " && namesGreeted[theName] === undefined) {
         count++;
         namesGreeted[theName] = 0;
         greetingCounter.innerHTML = count;
@@ -37,7 +37,7 @@ function ClearTextbox() {
 }
 
 // resetting the counter
-function resetBtn(){
+function resetBtn() {
     greetingCounter.innerHTML = 0;
 }
 resetButton.addEventListener('click', resetBtn);
