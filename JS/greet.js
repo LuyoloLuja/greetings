@@ -3,7 +3,7 @@ var theName = document.querySelector(".theName");
 var greetingCounter = document.querySelector(".counter");
 var greetingMessage = document.querySelector(".greeting");
 var resetButton = document.querySelector(".resetButton");
-var count = [];
+var count = 0;
 
 function GreetMe() {
     var languages = document.querySelector("input[name='language']:checked");
