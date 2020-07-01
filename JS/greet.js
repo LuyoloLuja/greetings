@@ -4,28 +4,33 @@ var greetingCounter = document.querySelector(".counter");
 var greetingMessage = document.querySelector(".greeting");
 var resetButton = document.querySelector(".resetButton");
 
-var greetingInstance = GreetFactory();
+var greetedName;
+
+if(localStorage['name']){
+    greetedName = JSON.parse(localStorage.getItem('name'));
+}
+
+var greetingInstance = GreetFactory(greetedName);
 
 function GreetMe() {
     var languages = document.querySelector("input[name='language']:checked");
-    if(languages){
+
     var languageChecked = languages.value;
     var userName = theName.value;
+    if(languages){
 
-    greetingMessage.innerHTML = greetingInstance.userInput(userName, languageChecked)
-    greetingInstance.storedNames(userName);
-    greetingCounter.innerHTML = greetingInstance.getCounter();
-    
-    // TO DO --- clears textbox but breaks incrementing code
+        greetingMessage.innerHTML = greetingInstance.userInput(userName, languageChecked)
+        greetingInstance.setNames(userName)
+        localStorage['name'] = JSON.stringify(greetingInstance.getNames())
+        greetingCounter.innerHTML = greetingInstance.getCounter();
     }
-   // greetingInstance.clearTextbox(theName);
-
 }
 myButton.addEventListener('click', GreetMe);
 
-// window.addEventListener('onload', function(){
-//     theName.value = "";
-// })
+window.addEventListener('load', function(){
+    greetingCounter.innerHTML = greetingInstance.getCounter();
+})
+
 function resetBtn() {
     greetingCounter.innerHTML = 0;
     theName.value = "";
