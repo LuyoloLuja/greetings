@@ -12,26 +12,20 @@ function GreetFactory() {
         }
     }
 
-    function counter(theName){
+    function storedNames(theName){
         if(storedValues[theName] === undefined){
-            incrementCounter++;
+         //   incrementCounter++;
             storedValues[theName] = 0;
         }
     }
 
     function getCounter(){
-        return incrementCounter;
+        return Object.keys(storedValues).length;
     }
-
-    function clearTextbox(textBoxValue) {
-        textBoxValue.value = "";
-        return textBoxValue;
-    }
-
+    
     return {
         userInput,
-        counter,
+        storedNames,
         getCounter,
-        clearTextbox,
     }
 }
