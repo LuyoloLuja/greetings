@@ -15,14 +15,14 @@ function GreetMe() {
     greetingInstance.counter(userName);
     greetingCounter.innerHTML = greetingInstance.getCounter();
     
-    ClearTextbox();
+//   ClearTextbox();
 }
 myButton.addEventListener('click', GreetMe);
 
 // clears the text box when button is clicked
-function ClearTextbox() {
-    document.querySelector(".theName").value = " ";
-}
+// function ClearTextbox() {
+//     document.querySelector(".theName").value = "";
+// }
 
 // resetting the counter
 function resetBtn() {
