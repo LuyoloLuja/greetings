@@ -1,6 +1,5 @@
 function GreetFactory(names) {
     var storedValues = names || {};
-    var incrementCounter = 0;
 
     function userInput(userName, languageSelected) {
         if (languageSelected === "english") {
@@ -12,31 +11,30 @@ function GreetFactory(names) {
         }
     }
 
-    function setNames(theName){
-        
-        if(theName){
-        if(storedValues[theName] === undefined){
-         //   incrementCounter++;
-            storedValues[theName] = 0;
+    function setNames(theName) {
+
+        if (theName) {
+            if (storedValues[theName] === undefined) {
+                storedValues[theName] = 0;
+            }
         }
     }
-    }
 
-    function errorMessages(name, lang){
-        if(!name && lang === null){
+    function errorMessages(name, lang) {
+        if (!name && lang === null) {
             return "Please enter your name and select lang";
-        }else if(!name){
+        } else if (!name) {
             return "PLease enter your name";
-        }else if(lang === null){
+        } else if (lang === null) {
             return "Please select a language";
         }
     }
 
-    function getNames(){
+    function getNames() {
         return storedValues;
     }
 
-    function getCounter(){
+    function getCounter() {
         return Object.keys(storedValues).length;
     }
 

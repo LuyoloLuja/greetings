@@ -6,7 +6,7 @@ var resetButton = document.querySelector(".resetButton");
 
 var greetedName;
 
-if(localStorage['name']){
+if (localStorage['name']) {
     greetedName = JSON.parse(localStorage.getItem('name'));
 }
 
@@ -17,8 +17,8 @@ function GreetMe() {
 
     var languageChecked = languages.value;
     var userName = theName.value;
-    if(languages){
-var upperName = userName.charAt(0).toUpperCase() + userName.slice(1);
+    if (languages) {
+        var upperName = userName.charAt(0).toUpperCase() + userName.slice(1);
         greetingMessage.innerHTML = greetingInstance.userInput(upperName, languageChecked)
         greetingInstance.setNames(upperName)
         localStorage['name'] = JSON.stringify(greetingInstance.getNames())
@@ -27,12 +27,11 @@ var upperName = userName.charAt(0).toUpperCase() + userName.slice(1);
 }
 myButton.addEventListener('click', GreetMe);
 
-window.addEventListener('load', function(){
+window.addEventListener('load', function () {
     greetingCounter.innerHTML = greetingInstance.getCounter();
 })
 
 function resetBtn() {
     greetingCounter.innerHTML = 0;
-    theName.value = "";
 }
 resetButton.addEventListener('click', resetBtn);
