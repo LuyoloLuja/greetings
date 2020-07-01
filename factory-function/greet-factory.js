@@ -21,12 +21,17 @@ function GreetFactory() {
 
     function getCounter(){
         return incrementCounter;
-    //    return Object.keys(storedValues).length;
+    }
+
+    function clearTextbox(textBoxValue) {
+        textBoxValue.value = "";
+        return textBoxValue;
     }
 
     return {
         userInput,
         counter,
-        getCounter
+        getCounter,
+        clearTextbox,
     }
 }
