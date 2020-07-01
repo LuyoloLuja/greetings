@@ -18,9 +18,9 @@ function GreetMe() {
     var languageChecked = languages.value;
     var userName = theName.value;
     if(languages){
-
-        greetingMessage.innerHTML = greetingInstance.userInput(userName, languageChecked)
-        greetingInstance.setNames(userName)
+var upperName = userName.charAt(0).toUpperCase() + userName.slice(1);
+        greetingMessage.innerHTML = greetingInstance.userInput(upperName, languageChecked)
+        greetingInstance.setNames(upperName)
         localStorage['name'] = JSON.stringify(greetingInstance.getNames())
         greetingCounter.innerHTML = greetingInstance.getCounter();
     }
