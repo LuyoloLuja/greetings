@@ -20,15 +20,15 @@ function GreetFactory(names) {
         }
     }
 
-    function errorMessages(name, lang) {
-        if (name === "" && lang === null) {
-            return "Please enter your name and select lang";
-        } else if (name === "") {
-            return "Please enter your name";
-        } else if (lang === null) {
-            return "Please select a language";
-        }
-    }
+    // function errorMessages(name, lang) {
+    //     if (name === "" && lang === null) {
+    //         return "Please enter your name and select lang";
+    //     } else if (name === "") {
+    //         return "Please enter your name";
+    //     } else if (lang === null) {
+    //         return "Please select a language";
+    //     }
+    // }
 
     function getNames() {
         return storedValues;
@@ -43,6 +43,6 @@ function GreetFactory(names) {
         setNames,
         getCounter,
         getNames,
-        errorMessages
+        // errorMessages
     }
 }
