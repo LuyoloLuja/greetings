@@ -21,10 +21,10 @@ function GreetFactory(names) {
     }
 
     function errorMessages(name, lang) {
-        if (!name && lang === null) {
+        if (name === "" && lang === null) {
             return "Please enter your name and select lang";
-        } else if (!name) {
-            return "PLease enter your name";
+        } else if (name === "") {
+            return "Please enter your name";
         } else if (lang === null) {
             return "Please select a language";
         }
