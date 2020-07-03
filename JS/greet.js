@@ -18,14 +18,14 @@ function GreetMe() {
     var languageChecked = languages.value;
     var userName = theName.value;
 
-//   if (language) {
+   if (languageChecked) {
         var upperCaseName = userName.charAt(0).toUpperCase() + userName.slice(1);
         greetingMessage.innerHTML = greetingInstance.userInput(upperCaseName, languageChecked)
         greetingInstance.setNames(upperCaseName)
         localStorage['name'] = JSON.stringify(greetingInstance.getNames())
         greetingCounter.innerHTML = greetingInstance.getCounter();
-//   }    
-//   greetingMessage.innerHTML = greetingInstance.errorMessages(upperCaseName, languageChecked)
+   }    
+   greetingMessage.innerHTML = greetingInstance.errorMessages(upperCaseName, languageChecked)
 }
 myButton.addEventListener('click', GreetMe);
 
