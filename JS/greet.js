@@ -24,8 +24,16 @@ function GreetMe() {
         greetingInstance.setNames(upperCaseName)
         localStorage['name'] = JSON.stringify(greetingInstance.getNames())
         greetingCounter.innerHTML = greetingInstance.getCounter();
-   }    
-   greetingMessage.innerHTML = greetingInstance.errorMessages(upperCaseName, languageChecked)
+   }
+  // greetingMessage.innerHTML = greetingInstance.errorMessages(upperCaseName, languageChecked)
+
+  if(userName === "" && languageChecked === null){
+    greetingMessage.innerHTML = "Please enter your name and select a language!";
+  }else if(userName === ""){
+    greetingMessage.innerHTML = "Please enter your name!";
+  }else if(languageChecked === null){
+    greetingMessage.innerHTML = "Please select a language!";
+  }
 }
 myButton.addEventListener('click', GreetMe);
 
