@@ -4,31 +4,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Greet Tests</title>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.js" charset="utf-8"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/3.5.0/chai.min.js"></script>
+    <title>Greetings</title>
+    <link rel="stylesheet" href="./CSS/stylesheet.css">
 </head>
 
 <body>
-    <div id="mocha"></div>
-    <script>
-        // the mocha test style to use - (BDD) Behaviour Driven Development
-        mocha.setup('bdd');
-        //ensure the assert function is available
-        var assert = chai.assert;
+    <div class="container">
+        <div class="form">
+            <h1>Greetings</h1>
 
-    </script>
+            <div class="textbox">
+                Name
+                <input class="theName" type="text" name="" value="" onfocus="this.value = ''">
+                <span class="counter">0</span>
+            </div>
+
+            <div class="radio">
+                <label class="">
+                    <input type="radio" name="language" class="languageType" value="english">
+                    <span class="">English</span>
+                </label>
+
+                <label class="">
+                    <input type="radio" name="language" class="languageType" value="afrikaans">
+                    <span class="">Afrikaans</span>
+                </label>
+
+                <label class="">
+                    <input type="radio" name="language" class="languageType" value="isixhosa">
+                    <span class="">IsiXhosa</span>
+                </label>
+            </div>
+
+            <button class="myButton" name="button" value="">Greet Me</button>
+            <button class="resetButton" name="button" value="">Reset</button>
+
+            <div class="greeting">
+                Should greet the user
+            </div>
+        </div>
+    </div>
 
     <script src="./factory-function/greet-factory.js"></script>
-    <script src="test/greet-test.js"></script>
-
-    <script>
-        // configure and run mocha
-        mocha.checkLeaks();
-        mocha.run();
-    </script>
+    <script src="./JS/greet.js"></script>
 </body>
 
 </html>

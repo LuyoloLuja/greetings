@@ -15,7 +15,11 @@ var greetingInstance = GreetFactory(greetedName);
 function GreetMe() {
     var languages = document.querySelector("input[name='language']:checked");
 
-    var languageChecked = languages.value;
+    var languageChecked = "";
+    if (languages) {
+      languageChecked = languages.value;
+    }
+
     var userName = theName.value;
 
    if (languageChecked) {
@@ -25,15 +29,7 @@ function GreetMe() {
         localStorage['name'] = JSON.stringify(greetingInstance.getNames())
         greetingCounter.innerHTML = greetingInstance.getCounter();
    }
-  // greetingMessage.innerHTML = greetingInstance.errorMessages(upperCaseName, languageChecked)
-
-  if(userName === "" && languageChecked === null){
-    greetingMessage.innerHTML = "Please enter your name and select a language!";
-  }else if(userName === ""){
-    greetingMessage.innerHTML = "Please enter your name!";
-  }else if(languageChecked === null){
-    greetingMessage.innerHTML = "Please select a language!";
-  }
+   greetingMessage.innerHTML = greetingInstance.errorHandler(upperCaseName, languageChecked);
 }
 myButton.addEventListener('click', GreetMe);
 

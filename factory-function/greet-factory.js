@@ -19,7 +19,17 @@ function GreetFactory(names) {
             }
         }
     }
-    
+
+    function errorHandler(username, language){
+      if(!username && !language){
+        return "Please enter your name and select a language!";
+      }else if(!username){
+        return "Please enter your name!";
+      }else if (!language) {
+        return "Please select a language!"
+      }
+    }
+
     function getNames() {
         return storedValues;
     }
@@ -33,5 +43,6 @@ function GreetFactory(names) {
         setNames,
         getCounter,
         getNames,
+        errorHandler
     }
 }

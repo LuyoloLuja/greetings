@@ -50,4 +50,5 @@ button {
 }
 .greeting {
     clear: both;
+    padding: 8px;
 }
