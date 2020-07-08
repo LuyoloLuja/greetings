@@ -3,11 +3,11 @@ function GreetFactory(names) {
 
     function userInput(userName, languageSelected) {
         if (languageSelected === "english") {
-            return "Hi, " + userName;
+            return "Hi, " + userName + "!";
         } else if (languageSelected === "afrikaans") {
-            return "More, " + userName;
+            return "More, " + userName + "!";
         } else if (languageSelected === "isixhosa") {
-            return "Molo, " + userName;
+            return "Molo, " + userName + "!";
         }
     }
 
@@ -26,7 +26,7 @@ function GreetFactory(names) {
       }else if(!username){
         return "Please enter your name!";
       }else if (!language) {
-        return "Please select a language!"
+        return "Please select a language!";
       }
     }
 

@@ -16,20 +16,23 @@ function GreetMe() {
     var languages = document.querySelector("input[name='language']:checked");
 
     var languageChecked = "";
+
     if (languages) {
       languageChecked = languages.value;
     }
 
     var userName = theName.value;
 
-   if (languageChecked) {
+   if (languageChecked && userName) {
         var upperCaseName = userName.charAt(0).toUpperCase() + userName.slice(1);
-        greetingMessage.innerHTML = greetingInstance.userInput(upperCaseName, languageChecked)
-        greetingInstance.setNames(upperCaseName)
-        localStorage['name'] = JSON.stringify(greetingInstance.getNames())
+        greetingMessage.innerHTML = greetingInstance.userInput(upperCaseName, languageChecked);
+        greetingInstance.setNames(upperCaseName);
+        localStorage['name'] = JSON.stringify(greetingInstance.getNames());
         greetingCounter.innerHTML = greetingInstance.getCounter();
+   }else {
+      greetingMessage.innerHTML = greetingInstance.errorHandler(upperCaseName, languageChecked);
    }
-   greetingMessage.innerHTML = greetingInstance.errorHandler(upperCaseName, languageChecked);
+
 }
 myButton.addEventListener('click', GreetMe);
 
