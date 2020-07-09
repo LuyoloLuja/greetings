@@ -42,6 +42,9 @@ window.addEventListener('load', function () {
 
 function resetBtn() {
     greetingCounter.innerHTML = 0;
-    window.localStorage.clear();
+
+    if (localStorage.getItem('name')) {
+      localStorage.clear();
+    }
 }
 resetButton.addEventListener('click', resetBtn);
