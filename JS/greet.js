@@ -43,7 +43,7 @@ window.addEventListener('load', function () {
 function resetBtn() {
     greetingCounter.innerHTML = 0;
 
-    if (localStorage.getItem('name')) {
+    if (localStorage) {
       localStorage.clear();
     }
 }
