@@ -24,15 +24,13 @@ function GreetMe() {
     var userName = theName.value;
 
    if (languageChecked && userName) {
-        var upperCaseName = userName.charAt(0).toUpperCase() + userName.slice(1);
-        var caseInsensitiveName = /upperCaseName/i;
-        userName.match(caseInsensitiveName);
+        var upperCaseName = userName.charAt(0).toUpperCase() + userName.slice(1).toLowerCase();
         greetingMessage.innerHTML = greetingInstance.userInput(upperCaseName, languageChecked);
-        greetingInstance.setNames(caseInsensitiveName);
+        greetingInstance.setNames(upperCaseName);
         localStorage['name'] = JSON.stringify(greetingInstance.getNames());
         greetingCounter.innerHTML = greetingInstance.getCounter();
    }else {
-      greetingMessage.innerHTML = greetingInstance.errorHandler(caseInsensitiveName, languageChecked);
+      greetingMessage.innerHTML = greetingInstance.errorHandler(upperCaseName, languageChecked);
    }
 
 }
