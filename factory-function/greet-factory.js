@@ -12,7 +12,6 @@ function GreetFactory(names) {
     }
 
     function setNames(theName) {
-
         if (theName) {
             if (storedValues[theName] === undefined) {
                 storedValues[theName] = 0;

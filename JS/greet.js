@@ -25,12 +25,14 @@ function GreetMe() {
 
    if (languageChecked && userName) {
         var upperCaseName = userName.charAt(0).toUpperCase() + userName.slice(1);
+        var caseInsensitiveName = /upperCaseName/i;
+        userName.match(caseInsensitiveName);
         greetingMessage.innerHTML = greetingInstance.userInput(upperCaseName, languageChecked);
-        greetingInstance.setNames(upperCaseName);
+        greetingInstance.setNames(caseInsensitiveName);
         localStorage['name'] = JSON.stringify(greetingInstance.getNames());
         greetingCounter.innerHTML = greetingInstance.getCounter();
    }else {
-      greetingMessage.innerHTML = greetingInstance.errorHandler(upperCaseName, languageChecked);
+      greetingMessage.innerHTML = greetingInstance.errorHandler(caseInsensitiveName, languageChecked);
    }
 
 }
@@ -42,5 +44,6 @@ window.addEventListener('load', function () {
 
 function resetBtn() {
     greetingCounter.innerHTML = 0;
+    localStorage.clear();
 }
 resetButton.addEventListener('click', resetBtn);
